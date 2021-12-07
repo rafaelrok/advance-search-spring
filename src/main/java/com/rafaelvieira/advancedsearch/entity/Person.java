@@ -1,4 +1,4 @@
-package com.rafaelvieira.advancedsearch.model;
+package com.rafaelvieira.advancedsearch.entity;
 
 import com.rafaelvieira.advancedsearch.enums.MaritalStatus;
 import lombok.Getter;
@@ -56,6 +56,7 @@ public class Person implements Serializable {
         this.birthday = birthday;
     }
 
+    // Gera um id randomico e a data de aniversario pega atual do sistema no cadastro
     @PrePersist
     private void prePersist() {
         this.id = UUID.randomUUID().toString();

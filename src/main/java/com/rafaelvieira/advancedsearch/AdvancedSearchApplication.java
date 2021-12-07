@@ -1,7 +1,14 @@
 package com.rafaelvieira.advancedsearch;
 
+import com.rafaelvieira.advancedsearch.entity.Person;
+import com.rafaelvieira.advancedsearch.enums.MaritalStatus;
+import com.rafaelvieira.advancedsearch.repository.PersonRepository;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import java.time.LocalDate;
 
 @SpringBootApplication
 public class AdvancedSearchApplication {
@@ -10,7 +17,6 @@ public class AdvancedSearchApplication {
 
 		SpringApplication.run(AdvancedSearchApplication.class, args);
 	}
-/*
 	@Bean
 	CommandLineRunner run(PersonRepository personRepository) {
 		return args -> {
@@ -33,6 +39,5 @@ public class AdvancedSearchApplication {
 			personRepository.save(new Person("Lucas", "lucas@gmail.com", MaritalStatus.WIDOWED, "Pampulha", "Belo Horizonte", "MG", LocalDate.of(1978, 7, 23)));
 		};
 	}
- */
 
 }
