@@ -66,16 +66,20 @@ public class PersonSpecification {
                                 root.get("state"), filter.getState())
                 );
             }
-            //Compara o ano de aniversario inicial
+            //Compara o ano de aniversário inicial
+            //greaterThanOrEqualTo utilizado para comparar o ano de aniversário inicial funciona como um
+            //Between com lessThanOrEqualTo
             if(!ObjectUtils.isEmpty(filter.getInitialbirthday())) {
                 predicateList.add(
-                        criteriaBuilder.greaterThanOrEqualTo(root.get("birthday"), filter.getInitialbirthday())
+                        criteriaBuilder.greaterThanOrEqualTo(
+                                root.get("birthday"), filter.getInitialbirthday())
                 );
             }
             //Compara o ano de aniversario final
             if(!ObjectUtils.isEmpty(filter.getFinalbirthday())) {
                 predicateList.add(
-                        criteriaBuilder.lessThanOrEqualTo(root.get("birthday"), filter.getFinalbirthday())
+                        criteriaBuilder.lessThanOrEqualTo(
+                                root.get("birthday"), filter.getFinalbirthday())
                 );
             }
 
